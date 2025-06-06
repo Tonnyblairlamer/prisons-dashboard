@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Staff Management - Uganda Prisons</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f4f6fc;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: maroon;
+      color: white;
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .sidebar a {
+      padding: 15px 25px;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.2s;
+    }
+    .sidebar a:hover {
+      background-color: #293850;
+    }
+    .main {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      font-size: 24px;
+      color: #1f2a40;
+    }
+    .btn {
+      background-color: #2b72f1;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #1e5fd0;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background-color: #f9fafc;
+      font-weight: 600;
+    }
+    td.actions {
+      display: flex;
+      gap: 10px;
+    }
+    .action-btn {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #2b72f1;
+      font-size: 18px;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+      .sidebar h2 {
+        margin-bottom: 0;
+        font-size: 18px;
+      }
+      .sidebar a {
+        padding: 10px 10px;
+        font-size: 14px;
+        gap: 5px;
+      }
+      .main {
+        padding: 15px;
+      }
+      table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        font-size: 13px;
+      }
+      th, td {
+        min-width: 100px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div>
+      <h2>Prisons System</h2>
+      <a href="index.html"><i class="ri-dashboard-fill"></i> Dashboard</a>
+      <a href="notice.html"><i class="ri-notification-3-fill"></i> Notices</a>
+      <a href="staff.html"><i class="ri-user-3-fill"></i> Staff</a>
+      <a href="departments.html"><i class="ri-building-4-fill"></i> Departments</a>
+      <a href="analytics.html"><i class="ri-bar-chart-fill"></i> Analytics</a>
+      <a href="settings.html"><i class="ri-settings-5-fill"></i> Settings</a>
+    </div>
+    <div>
+      <a href="help.html"><i class="ri-question-fill"></i> Help</a>
+      <a href="#"><i class="ri-logout-box-r-line"></i> Logout</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Manage Staff</h1>
+      <a href="add-staff.html" class="btn">+ Add Staff</a>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#101</td>
+          <td>Jane K. Namutebi</td>
+          <td>Warden</td>
+          <td>Operations</td>
+          <td style="color: green;">Active</td>
+          <td class="actions">
+            <button class="action-btn"><i class="ri-eye-fill"></i></button>
+            <button class="action-btn"><i class="ri-edit-fill"></i></button>
+            <button class="action-btn" style="color: red;"><i class="ri-delete-bin-fill"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td>#102</td>
+          <td>John M. Ssenkumba</td>
+          <td>Security Head</td>
+          <td>Security</td>
+          <td style="color: green;">Active</td>
+          <td class="actions">
+            <button class="action-btn"><i class="ri-eye-fill"></i></button>
+            <button class="action-btn"><i class="ri-edit-fill"></i></button>
+            <button class="action-btn" style="color: red;"><i class="ri-delete-bin-fill"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td>#103</td>
+          <td>Emily N. Achan</td>
+          <td>HR Officer</td>
+          <td>HR</td>
+          <td style="color: orange;">Pending</td>
+          <td class="actions">
+            <button class="action-btn"><i class="ri-eye-fill"></i></button>
+            <button class="action-btn"><i class="ri-edit-fill"></i></button>
+            <button class="action-btn" style="color: red;"><i class="ri-delete-bin-fill"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
